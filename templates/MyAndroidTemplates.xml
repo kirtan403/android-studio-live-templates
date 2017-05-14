@@ -1,0 +1,78 @@
+<templateSet group="MyAndroidTemplates">
+  <template name="act_bind" value="private static final String TAG = $class$.class.getSimpleName();&#10;&#10;$LAYOUT_FILE_BINDING$Binding mBinding;&#10;&#10;@Override&#10;protected void onCreate(Bundle savedInstanceState) {&#10;    super.onCreate(savedInstanceState);&#10;    mBinding = DataBindingUtil.setContentView(this, R.layout.$LAYOUT_FILE$);&#10;    &#10;    $END$&#10;}" description="Creates Activity's onCreate method with data-binding" toReformat="true" toShortenFQNames="true">
+    <variable name="class" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="LAYOUT_FILE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="LAYOUT_FILE_BINDING" expression="capitalize(camelCase(LAYOUT_FILE))" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="bind_true" value="dataBinding {&#10;    enabled = true&#10;}" description="Enable data binding in build.gradle file" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="rcv_adapter_bind" value="public class $adapterClass$ extends RecyclerView.Adapter&lt;$adapterClass$.$viewHolderClass$&gt; {&#10;&#10;    ArrayList&lt;$objectClass$&gt; $listName$;&#10;&#10;    public $adapterClass$(ArrayList&lt;$objectClass$&gt; $listName$) {&#10;        this.$listName$ = $listName$;&#10;    }&#10;&#10;    @Override&#10;    public $viewHolderClass$ onCreateViewHolder(ViewGroup parent, int viewType) {&#10;        View itemView = LayoutInflater.from(parent.getContext()).&#10;                inflate(R.layout.$layoutFile$, parent, false);&#10;        return new $viewHolderClass$(itemView);&#10;    }&#10;&#10;    @Override&#10;    public void onBindViewHolder($viewHolderClass$ holder, int position) {&#10;        $objectClass$ $objectClassVariable$ = $listName$.get(position);&#10;        $END$&#10;&#10;        holder.binding.executePendingBindings();&#10;    }&#10;&#10;    @Override&#10;    public int getItemCount() {&#10;        return $listName$.size();&#10;    }&#10;&#10;    public class $viewHolderClass$ extends RecyclerView.ViewHolder {&#10;&#10;        $layoutFileCaps$Binding binding;&#10;&#10;        public $viewHolderClass$(View itemView) {&#10;            super(itemView);&#10;            binding = DataBindingUtil.bind(itemView);&#10;        }&#10;    }&#10;}" description="Create RecyclerViewAdapter with ViewHolder using Databinding" toReformat="true" toShortenFQNames="true">
+    <variable name="adapterClass" expression="" defaultValue="&quot;MyAdapter&quot;" alwaysStopAt="true" />
+    <variable name="viewHolderClass" expression="" defaultValue="&quot;MyViewHolder&quot;" alwaysStopAt="true" />
+    <variable name="objectClass" expression="" defaultValue="&quot;Object&quot;" alwaysStopAt="true" />
+    <variable name="listName" expression="" defaultValue="&quot;myList&quot;" alwaysStopAt="true" />
+    <variable name="layoutFile" expression="" defaultValue="&quot;item_temp&quot;" alwaysStopAt="true" />
+    <variable name="objectClassVariable" expression="camelCase(objectClass)" defaultValue="" alwaysStopAt="false" />
+    <variable name="layoutFileCaps" expression="capitalize(camelCase(layoutFile))" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="onclick" value="$view$$extraForBinding$.setOnClickListener(new View.OnClickListener() {&#10;    @Override&#10;    public void onClick(View v) {&#10;        $END$&#10;    }&#10;});" description="Sets onClickListener for the current view" toReformat="true" toShortenFQNames="true">
+    <variable name="view" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="extraForBinding" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="act_start" value="startActivity(new Intent($contextClass$.this,$activityName$.class));&#10;$END$" description="Starts a new Activity with empty intent extras" toReformat="true" toShortenFQNames="true">
+    <variable name="contextClass" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <variable name="activityName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="frag_bind" value="private static final String TAG = $className$.class.getSimpleName();&#10;&#10;$bindingName$Binding mBinding;&#10;&#10;public $className$() {&#10;    // Required empty public constructor&#10;}&#10;&#10;@Override&#10;public View onCreateView(LayoutInflater inflater, ViewGroup container,&#10;                         Bundle savedInstanceState) {&#10;    // Inflate the layout for this fragment&#10;    mBinding = DataBindingUtil.inflate(inflater, R.layout.$layoutFile$, container, false);&#10;&#10;    $END$&#10;    &#10;    return mBinding.getRoot();&#10;}" description="Create Fragment's onCreateView and empty Constructor method with data-binding" toReformat="true" toShortenFQNames="true">
+    <variable name="className" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="layoutFile" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="bindingName" expression="capitalize(camelCase(layoutFile))" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="frag_bind_newinstance" value="private static final String TAG = $className$.class.getSimpleName();&#10;&#10;$bindingName$Binding mBinding;&#10;&#10;public $className$() {&#10;    // Required empty public constructor&#10;}&#10;&#10;public static $className$ newInstance() {&#10;    $className$ fragment = new $className$();&#10;    Bundle args = new Bundle();&#10;    fragment.setArguments(args);&#10;    return fragment;&#10;}&#10;&#10;@Override&#10;public View onCreateView(LayoutInflater inflater, ViewGroup container,&#10;                         Bundle savedInstanceState) {&#10;    // Inflate the layout for this fragment&#10;    mBinding = DataBindingUtil.inflate(inflater, R.layout.$layoutFile$, container, false);&#10;&#10;    $END$&#10;    &#10;    return mBinding.getRoot();&#10;}" description="Create Fragment's onCreateView,empty Constructor and empty arg newInstance method with data-binding" toReformat="true" toShortenFQNames="true">
+    <variable name="className" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="layoutFile" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="bindingName" expression="capitalize(camelCase(layoutFile))" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="frag_newinstance" value="private static final String ARG_$name$ = &quot;$nameValue$&quot;;&#10;&#10;private $argClass$ m$argVar$;&#10;&#10;public static $className$ newInstance($argClass$ $argVarName$) {&#10;    $className$ fragment = new $className$();&#10;    Bundle args = new Bundle();&#10;    args.put$argClass$(ARG_$name$, $argVarName$);&#10;    fragment.setArguments(args);&#10;    return fragment;&#10;}&#10;&#10;@Override&#10;public void onCreate(Bundle savedInstanceState) {&#10;    super.onCreate(savedInstanceState);&#10;    m$argVar$ = getArguments().get$argClass$(ARG_$name$);&#10;}" description="creates and defines new instance with 1 argument" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;NAME&quot;" alwaysStopAt="true" />
+    <variable name="nameValue" expression="camelCase(name)" defaultValue="" alwaysStopAt="false" />
+    <variable name="argVar" expression="capitalize(underscoresToCamelCase(name))" defaultValue="" alwaysStopAt="false" />
+    <variable name="className" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="argClass" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+    <variable name="argVarName" expression="underscoresToCamelCase(name)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="method" value="$type$ $static$ $return$ $methodName$($args$) {&#10;    $END$&#10;}" description="Creates a method" toReformat="true" toShortenFQNames="true">
+    <variable name="type" expression="" defaultValue="&quot;public&quot;" alwaysStopAt="true" />
+    <variable name="static" expression="" defaultValue="&quot;static&quot;" alwaysStopAt="true" />
+    <variable name="return" expression="" defaultValue="&quot;void&quot;" alwaysStopAt="true" />
+    <variable name="methodName" expression="" defaultValue="&quot;methodName&quot;" alwaysStopAt="true" />
+    <variable name="args" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>

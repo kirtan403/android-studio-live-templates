@@ -1,0 +1,120 @@
+<templateSet group="MyXMLLayoutTemplates">
+  <template name="binding" value="&lt;layout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;&#10;    $SELECTION$&#10;&lt;/layout&gt;" description="Convert layout with data binding" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="data_var" value="&lt;data&gt;&#10;    &lt;variable&#10;        name=&quot;$name$&quot;&#10;        type=&quot;$type$&quot; /&gt;&#10;        &#10;     $END$&#10;&lt;/data&gt;" description="Creates data tag with 1 variable" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="type" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="var" value="&lt;variable&#10;    name=&quot;$name$&quot;&#10;    type=&quot;$type$&quot; /&gt;&#10;    &#10;$END$" description="Declares a variable for data binding attributes" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="type" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="text_wrap" value="&lt;TextView&#10;    android:id=&quot;@+id/$id$&quot;&#10;    android:layout_width=&quot;wrap_content&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&#10;    android:text=&quot;$text$&quot;&#10;    $extra$ /&gt;&#10;&#10;$END$" description="Creates a TextView with warp_content width" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extra" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="text_match" value="&lt;TextView&#10;    android:id=&quot;@+id/$id$&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&#10;    android:text=&quot;$text$&quot;&#10;    $extra$ /&gt;&#10;&#10;$END$" description="Creates a TextView with match_parent width" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extra" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="edit_wrap" value="&lt;EditText&#10;    android:id=&quot;@+id/$id$&quot;&#10;    android:layout_width=&quot;wrap_content&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&#10;    android:hint=&quot;$hint$&quot; &#10;    $extra$ /&gt;&#10;    &#10;$END$" description="Creates a EditText with wrap_content width" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="hint" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extra" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="edit_match" value="&lt;EditText&#10;    android:id=&quot;@+id/$id$&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&#10;    android:hint=&quot;$hint$&quot;&#10;    $extra$ /&gt;&#10;    &#10;$END$" description="Creates a EditText with match_parent width" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="hint" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extra" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="image_wrap" value="&lt;ImageView&#10;    android:id=&quot;@+id/$id$&quot;&#10;    android:layout_width=&quot;wrap_content&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&#10;    android:src=&quot;$src$&quot; &#10;    $extra$ /&gt;&#10;    &#10;$END$" description="Creates a ImageView with warp_content height and width" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="src" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extra" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="image" value="&lt;ImageView&#10;    android:id=&quot;@+id/$id$&quot;&#10;    android:layout_width=&quot;$width$&quot;&#10;    android:layout_height=&quot;$height$&quot;&#10;    android:src=&quot;$src$&quot;&#10;    $extra$ /&gt;&#10;    &#10;$END$" description="Creates a ImageView" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="width" expression="" defaultValue="&quot;wrap_content&quot;" alwaysStopAt="true" />
+    <variable name="height" expression="" defaultValue="&quot;wrap_content&quot;" alwaysStopAt="true" />
+    <variable name="src" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extra" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="text" value="&lt;TextView&#10;    android:id=&quot;@+id/$id$&quot;&#10;    android:layout_width=&quot;$width$&quot;&#10;    android:layout_height=&quot;$height$&quot;&#10;    android:text=&quot;$text$&quot;&#10;    $extra$ /&gt;&#10;    &#10;$END$" description="Creates a TextView" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="width" expression="" defaultValue="&quot;wrap_content&quot;" alwaysStopAt="true" />
+    <variable name="height" expression="" defaultValue="&quot;wrap_content&quot;" alwaysStopAt="true" />
+    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extra" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="image_match" value="&lt;ImageView&#10;    android:id=&quot;@+id/$id$&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&#10;    android:src=&quot;$src$&quot; &#10;    $extra$ /&gt;&#10;    &#10;$END$" description="Creates a ImageView with warp_content height and match_parent width" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="src" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extra" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="edit" value="&lt;EditText&#10;    android:id=&quot;@+id/$id$&quot;&#10;    android:layout_width=&quot;$width$&quot;&#10;    android:layout_height=&quot;$height$&quot;&#10;    android:hint=&quot;$hint$&quot;&#10;    $extra$ /&gt;&#10;    &#10;$END$" description="Creates a EditText" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="width" expression="" defaultValue="&quot;wrap_content&quot;" alwaysStopAt="true" />
+    <variable name="height" expression="" defaultValue="&quot;wrap_content&quot;" alwaysStopAt="true" />
+    <variable name="hint" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extra" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="scroll" value="&lt;ScrollView&#10;    android:id=&quot;@+id/$id$&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;match_parent&quot;&gt;&#10;    &#10;    $END$  &#10;    $SELECTION$&#10;    &#10; &lt;/ScrollView&gt;" description="Adds a parent scroll container to the selected layout" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="&quot;scroll_view&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="scroll_nested" value="&lt;android.support.v4.widget.NestedScrollView&#10;    android:id=&quot;@+id/$id$&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;match_parent&quot;&gt;&#10;    &#10;    $END$  &#10;    $SELECTION$&#10;    &#10; &lt;/android.support.v4.widget.NestedScrollView&gt;" description="Adds a parent nested scroll container to the selected layout" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="&quot;scroll_view_nested&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="rcv" value="&lt;android.support.v7.widget.RecyclerView&#10;    android:id=&quot;@+id/$id$&quot;&#10;    android:layout_width=&quot;$width$&quot;&#10;    android:layout_height=&quot;$height$&quot;&#10;    $extra$ /&gt;&#10;    &#10;$END$" description="Creates a RecyclerView" toReformat="true" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="&quot;recycler_view&quot;" alwaysStopAt="true" />
+    <variable name="width" expression="" defaultValue="&quot;match_parent&quot;" alwaysStopAt="true" />
+    <variable name="height" expression="" defaultValue="&quot;match_parent&quot;" alwaysStopAt="true" />
+    <variable name="extra" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+</templateSet>
