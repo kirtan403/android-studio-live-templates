@@ -18,6 +18,8 @@ Restart and done! #Awesome
 
 Here is the list of codes available, try them out!
 
+Many of the templates uses data binding for faster development.
+
 ### Android Templates
 
 ![](images/MyAndroidTemplates.png)
@@ -29,3 +31,5 @@ Here is the list of codes available, try them out!
 ### XML Layout Templates
 
 ![](images/MyXMLLayoutTemplates.png)
+
+Have an idea or live template which can be useful? Share it by creating an issue or submitting a pull request.
