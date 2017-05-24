@@ -32,4 +32,23 @@ Many of the templates uses data binding for faster development.
 
 ![](images/MyXMLLayoutTemplates.png)
 
+### Kotlin Templates
+
+Currently following live templates are supported for Kotlin which we are used to in Java
+
+todo
+fixme
+Toast
+logd
+logi
+loge
+logr
+logt
+logw
+wtf
+fori
+itar
+iter
+
+
 Have an idea or live template which can be useful? Share it by creating an issue or submitting a pull request.
