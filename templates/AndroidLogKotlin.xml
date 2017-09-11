@@ -50,4 +50,10 @@
       <option name="KOTLIN_STATEMENT" value="true" />
     </context>
   </template>
+  <template name="logm" value="android.util.Log.d(TAG, $content$)&#10;$END$" description="Log with method parameters" toReformat="false" toShortenFQNames="true">
+    <variable name="content" expression="groovyScript(&quot;def params = _2.collect {it + ' = [$'+it+']'}.join(', '); return '\&quot;' + _1 + '() called' + (params.empty  ? '' : ' with: ' + params) + '\&quot;'&quot;, kotlinFunctionName(), functionParameters())" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="KOTLIN_STATEMENT" value="true" />
+    </context>
+  </template>
 </templateSet>
