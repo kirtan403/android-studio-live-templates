@@ -1,0 +1,44 @@
+<template format="4"
+        revision="1"
+        name="FCM Classes"
+        description="Creates classes for FCM">
+
+    <category value="Other"/>
+
+    <parameter id="messagingServiceClass"
+        name="Firebase messaging service class name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="MyFirebaseMessagingService"
+        help="The name of Firebase messaging service class"/>
+		
+	<parameter id="instanceServiceClass"
+        name="Firebase instance id service class name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="MyFirebaseInstanceIdService"
+        help="The name of Firebase instance id service class"/>
+
+	<parameter id="defaultIcon"
+           name="Add Default Notification Icon" 
+           type="boolean" 
+           default="false"
+           help="This will add default notification icon"/>
+		   
+	<parameter id="defaultColor"
+           name="Add Default Notification Color" 
+           type="boolean" 
+           default="false"
+           help="This will add default notification color"/>
+		   
+	<parameter id="channelId"
+           name="Add Notification Channel id for version oreo and above" 
+           type="boolean" 
+           default="false"
+           help="This will default channel id"/>
+
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
