@@ -52,3 +52,12 @@ Currently following live templates are supported for Kotlin which we are used to
 
 
 Have an idea or live template which can be useful? Share it by creating an issue or submitting a pull request.
+
+## Using Studio Templates
+
+Copy the folders inside `studio_templates` to `~/.android/templates/other` (Ref: https://issuetracker.google.com/issues/37105193) 
+
+Currently available templates:
+
+* New Activity with databinding (auto-enable databinding)
+* Add dependecies on the fly
