@@ -1,0 +1,55 @@
+<template format="4"
+        revision="1"
+        name="Add depedencies"
+        description="Select the dependency you want to add">
+
+    <category value="Dependencies"/>
+
+    <parameter
+              id="K4Kotlin"
+              name="K4Kotlin - com.github.kirtan403.k4kotlin:k4kotlin"
+              type="boolean"
+              default="false"
+              help="Check this if you want to add this dependency"/>
+
+    <parameter
+              id="K4KotlinRetrofit"
+              name="K4Kotlin-Retrofit - compile 'com.github.kirtan403.k4kotlin:k4kotlin-retrofit"
+              type="boolean"
+              default="false"
+              help="Check this if you want to add this dependency"/>
+
+
+    <parameter
+              id="QuickpermissionsKotlin"
+              name="Quickpermissions-Kotlin - com.github.quickpermissions:quickpermissions-kotlin"
+              type="boolean"
+              default="false"
+              help="Check this if you want to add this dependency"/>
+
+    <parameter
+              id="LastAdapter"
+              name="LastAdapter - com.github.nitrico.lastadapter:lastadapter"
+              type="boolean"
+              default="false"
+              help="Check this if you want to add this dependency"/>
+
+    <parameter
+              id="Retrofit"
+              name="Retrofit - com.squareup.retrofit2:retrofit"
+              type="boolean"
+              default="false"
+              help="Check this if you want to add this dependency"/>
+
+    <parameter
+              id="Glide"
+              name="Glide - com.github.bumptech.glide:glide"
+              type="boolean"
+              default="false"
+              help="Check this if you want to add this dependency"/>
+
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>

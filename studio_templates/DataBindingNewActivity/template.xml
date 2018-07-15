@@ -1,0 +1,37 @@
+<template format="4"
+        revision="1"
+        name="Databinding Activity"
+        description="Creates the new activity with data-binding">
+
+    <category value="DataBinding"/>
+
+    <parameter
+              id="activityClass"
+              name="Activity Name"
+              type="string"
+              constraints="class|unique|nonempty"
+              suggest="${layoutToActivity(layoutName)}"
+              default="MainActivity"
+              help="The name of the activity class to create"/>
+
+      <parameter
+              id="layoutName"
+              name="Layout Name"
+              type="string"
+              constraints="layout|unique|nonempty"
+              suggest="${activityToLayout(activityClass)}"
+              default="activity_main"
+              help="The name of the layout to create for the activity"/>
+
+      <parameter
+              id="enableDataBinding"
+              name="Enable DataBinding?"
+              type="boolean"
+              default="false"
+              help="Only check this if data binding is not enabled. You may need to verify your build.gradle file after this option is applied"/>
+
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
