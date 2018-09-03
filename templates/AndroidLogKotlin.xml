@@ -1,20 +1,20 @@
 <templateSet group="AndroidLogKotlin">
   <template name="logd" value="android.util.Log.d(TAG, &quot;$METHOD_NAME$: $content$&quot;)&#10;$END$" description="Log.d(TAG, String)" toReformat="true" toShortenFQNames="true">
-    <variable name="METHOD_NAME" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="METHOD_NAME" expression="kotlinFunctionName()" defaultValue="kotlinClassName()" alwaysStopAt="false" />
     <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="KOTLIN_STATEMENT" value="true" />
     </context>
   </template>
   <template name="logi" value="android.util.Log.i(TAG, &quot;$METHOD_NAME$: $content$&quot;)&#10;$END$" description="Log.i(TAG, String)" toReformat="true" toShortenFQNames="true">
-    <variable name="METHOD_NAME" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="METHOD_NAME" expression="kotlinFunctionName()" defaultValue="kotlinClassName()" alwaysStopAt="false" />
     <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="KOTLIN_STATEMENT" value="true" />
     </context>
   </template>
   <template name="loge" value="android.util.Log.e(TAG, &quot;$METHOD_NAME$: $content$&quot;, $exception$)&#10;$END$" description="Log.e(TAG, String, Exception)" toReformat="true" toShortenFQNames="true">
-    <variable name="METHOD_NAME" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="METHOD_NAME" expression="kotlinFunctionName()" defaultValue="kotlinClassName()" alwaysStopAt="false" />
     <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="exception" expression="" defaultValue="e" alwaysStopAt="false" />
     <context>
@@ -46,6 +46,13 @@
     <variable name="METHOD_NAME" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
     <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="exception" expression="" defaultValue="e" alwaysStopAt="false" />
+    <context>
+      <option name="KOTLIN_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="logm" value="android.util.Log.d(TAG, &quot;$METHOD_NAME$() called $content$&quot;)&#10;$END$" description="Log with method parameters" toReformat="false" toShortenFQNames="true">
+    <variable name="METHOD_NAME" expression="kotlinFunctionName()" defaultValue="kotlinClassName()" alwaysStopAt="false" />
+    <variable name="content" expression="groovyScript(&quot;def params = _1.collect {it + ' = [$'+it+']'}.join(', '); return (params.empty  ? '' : ' with: ' + params)&quot;, functionParameters())" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="KOTLIN_STATEMENT" value="true" />
     </context>
